@@ -1,4 +1,4 @@
-FROM gocd/gocd-agent:16.5.0-3305
+FROM gocd/gocd-agent-deprecated:16.5.0-3305
 MAINTAINER Hazim <hazim@aurorasolutions.io>
 
 RUN apt-get -y update
