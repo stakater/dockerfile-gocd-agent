@@ -31,6 +31,7 @@ RUN \
   apk add --update-cache openjdk8-jre-base git mercurial subversion openssh-client jq libuuid wget py-pip python3 && \
   pip install --upgrade pip && \
   pip install --upgrade awscli && \
+  pip3 install ruamel.yaml && \
 # unzip the zip file into /go-agent, after stripping the first path prefix
   unzip /tmp/go-agent.zip -d / && \
   mv go-agent-${GOCD_VERSION} /go-agent && \
