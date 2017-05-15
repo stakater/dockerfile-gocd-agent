@@ -90,8 +90,8 @@ if [ "$1" = '/go-agent/agent.sh' ]; then
     done
 
     # Set git Global settings:
-    try git config --global user.email "info@stakater.com"
-    try git config --global user.name "Stakater GoCD"
+    try exec /usr/local/sbin/tini -- /usr/local/sbin/gosu go "git config --global user.email \"gocd.stakater@gmail.com\"" >> ${STDOUT_LOG_FILE} 2>&1
+    try exec /usr/local/sbin/tini -- /usr/local/sbin/gosu go "git config --global user.name \"Stakater GoCD\"" >> ${STDOUT_LOG_FILE} 2>&1
     setup_autoregister_properties_file "${AGENT_WORK_DIR}/config/autoregister.properties"
     touch "${STDOUT_LOG_FILE}"
     chown go:go "${STDOUT_LOG_FILE}"
