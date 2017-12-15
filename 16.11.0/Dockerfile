@@ -2,6 +2,7 @@
 FROM gocd/gocd-agent-deprecated:16.11.0
 MAINTAINER Hazim <hazim@aurorasolutions.io>
 
+COPY --from=docker:17.09 /usr/local/bin/docker /usr/local/bin
 RUN apt-get -y update
 RUN apt-get -y install wget python-pip python-dev
 #Install Python -- Using latest because the rest install 3.4.2
